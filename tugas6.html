@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tugas Mandiri 6</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .paragraf {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        .p1 {
+            color: greenyellow;
+        }
+
+        .p2 {
+            color: deepskyblue;
+        }
+
+        .p3 {
+            color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="paragraf p1 hidden">Belajar</p>
+    <p class="paragraf p2 hidden">Fundamental Web</p>
+    <p class="paragraf p3 hidden">Di Hacktiv</p>
+
+    <script>
+        const paragraphs = document.querySelectorAll('.paragraf');
+        let currentParagraphIndex = 0;
+
+        function toggleVisibility() {
+            paragraphs[currentParagraphIndex].classList.toggle('hidden');
+            currentParagraphIndex = (currentParagraphIndex + 1) % paragraphs.length;
+        }
+
+        setInterval(() => {
+            toggleVisibility();
+            setTimeout(toggleVisibility, 1000);
+        }, 2000);
+    </script>
+</body>
+
+</html>

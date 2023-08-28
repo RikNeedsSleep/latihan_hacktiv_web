@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tugas 5</title>
+</head>
+
+<body>
+    <label for="message">Pesan:</label>
+    <input type="text" id="message"><br><br>
+
+    <label for="totalLoops">Berapa:</label>
+    <input type="number" id="totalLoops" min="1"><br><br>
+
+    <button id="loopButton">Input Kan</button>
+    <ol id="outputList"></ol>
+
+    <script>
+        const loopButton = document.getElementById('loopButton');
+        const totalLoopsInput = document.getElementById('totalLoops');
+        const messageInput = document.getElementById('message');
+        const outputList = document.getElementById('outputList');
+
+        loopButton.addEventListener('click', () => {
+            const totalLoops = parseInt(totalLoopsInput.value);
+            const message = messageInput.value;
+
+            outputList.innerHTML = '';
+
+            let i = 0;
+            while (i < totalLoops) {
+                const listItem = document.createElement('li');
+                listItem.textContent = message;
+                outputList.appendChild(listItem);
+                i++;
+            }
+        });
+    </script>
+</body>
+
+</html>
